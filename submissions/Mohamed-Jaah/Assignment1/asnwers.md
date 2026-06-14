@@ -15,8 +15,8 @@
 | 2 | [The Data Science Lifecycle](#2--the-data-science-lifecycle) |
 | 3 | [Supervised vs. Unsupervised Learning](#3--supervised-learning-vs-unsupervised-learning) |
 | 4 | [Overfitting — Causes & Prevention](#4--overfitting-causes--prevention) |
-| 5 | [Case Study — Airline Delay Prediction](#5--case-study-airline-delay-prediction-machine-learning) |
-| 6 | [How Training and Test Data Are Split](#6--how-training-and-test-data-are-split) |
+| 5 | [How Training and Test Data Are Split](#5--how-training-and-test-data-are-split) |
+| 6 | [Case Study — Airline Delay Prediction](#6--case-study-airline-delay-prediction-machine-learning) |
 | 7 | [References](#7--references) |
 
 <br>
@@ -223,30 +223,7 @@ A model learns from data that has **no labels or correct answers** at all.
 
 ---
 
-## 5. 📂 Case Study: Airline Delay Prediction (Machine Learning)
-
-<table>
-<tr>
-<td>
-
-### ✈️ Overview
-A research study built a machine learning system to **predict flight delays** using weather data, flight history, and airport traffic — aiming to reduce delays and improve airline operations.
-
-### ⚙️ How It Works
-The system analyzes past and real-time flight data to predict **whether a flight will be delayed before it happens**, allowing airlines to proactively adjust schedules and resources.
-
-### 🔄 Lifecycle Stages Covered
-This project spans **data collection → cleaning → feature engineering → model building → evaluation**, using aviation data prepared, modeled, and tested for delay-prediction accuracy.
-
-</td>
-</tr>
-</table>
-
-<br>
-
----
-
-## 6. ✂️ How Training and Test Data Are Split
+## 5. ✂️ How Training and Test Data Are Split
 
 <table>
 <tr>
@@ -296,6 +273,29 @@ This project spans **data collection → cleaning → feature engineering → mo
 
 ---
 
+## 6. 📂 Case Study: Airline Delay Prediction (Machine Learning)
+
+<table>
+<tr>
+<td>
+
+### ✈️ Overview
+A research study built a machine learning system to **predict flight delays** using weather data, flight history, and airport traffic — aiming to reduce delays and improve airline operations.
+
+### ⚙️ How It Works
+The system analyzes past and real-time flight data to predict **whether a flight will be delayed before it happens**, allowing airlines to proactively adjust schedules and resources.
+
+### 🔄 Lifecycle Stages Covered
+This project spans **data collection → cleaning → feature engineering → model building → evaluation**, using aviation data prepared, modeled, and tested for delay-prediction accuracy.
+
+</td>
+</tr>
+</table>
+
+<br>
+
+---
+
 ## 7. 📚 References
 
 1. *A Hybrid Machine Learning-Based Model for Predicting Flight Delay Through Aviation Big Data* — **Scientific Reports**, 2024.
@@ -306,6 +306,6 @@ This project spans **data collection → cleaning → feature engineering → mo
 <div align="center">
 
 ---
-*📘  — Data Science & Machine Learning Assignment-1 (15 - June - 2026)*
+*📘  — Data Science & Machine Learning Assignment —*
 
 </div>
