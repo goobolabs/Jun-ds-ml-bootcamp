@@ -14,9 +14,10 @@
 | 1 | [How Data Science and Machine Learning Work Together](#1--how-data-science-and-machine-learning-work-together) |
 | 2 | [The Data Science Lifecycle](#2--the-data-science-lifecycle) |
 | 3 | [Supervised vs. Unsupervised Learning](#3--supervised-learning-vs-unsupervised-learning) |
-| 4 | [Overfitting — Causes, Prevention & Data Splitting](#4--overfitting-causes-prevention--data-splitting) |
+| 4 | [Overfitting — Causes & Prevention](#4--overfitting-causes--prevention) |
 | 5 | [Case Study — Airline Delay Prediction](#5--case-study-airline-delay-prediction-machine-learning) |
-| 6 | [References](#-references) |
+| 6 | [How Training and Test Data Are Split](#6--how-training-and-test-data-are-split) |
+| 7 | [References](#7--references) |
 
 <br>
 
@@ -176,7 +177,7 @@ A model learns from data that has **no labels or correct answers** at all.
 
 ---
 
-## 4. 🚀 Overfitting: Causes, Prevention & Data Splitting
+## 4. 🚀 Overfitting: Causes & Prevention
 
 ### ⚠️ What Is Overfitting?
 
@@ -222,7 +223,30 @@ A model learns from data that has **no labels or correct answers** at all.
 
 ---
 
-### ✂️ How Training and Test Data Are Split
+## 5. 📂 Case Study: Airline Delay Prediction (Machine Learning)
+
+<table>
+<tr>
+<td>
+
+### ✈️ Overview
+A research study built a machine learning system to **predict flight delays** using weather data, flight history, and airport traffic — aiming to reduce delays and improve airline operations.
+
+### ⚙️ How It Works
+The system analyzes past and real-time flight data to predict **whether a flight will be delayed before it happens**, allowing airlines to proactively adjust schedules and resources.
+
+### 🔄 Lifecycle Stages Covered
+This project spans **data collection → cleaning → feature engineering → model building → evaluation**, using aviation data prepared, modeled, and tested for delay-prediction accuracy.
+
+</td>
+</tr>
+</table>
+
+<br>
+
+---
+
+## 6. ✂️ How Training and Test Data Are Split
 
 <table>
 <tr>
@@ -272,30 +296,7 @@ A model learns from data that has **no labels or correct answers** at all.
 
 ---
 
-## 5. 📂 Case Study: Airline Delay Prediction (Machine Learning)
-
-<table>
-<tr>
-<td>
-
-### ✈️ Overview
-A research study built a machine learning system to **predict flight delays** using weather data, flight history, and airport traffic — aiming to reduce delays and improve airline operations.
-
-### ⚙️ How It Works
-The system analyzes past and real-time flight data to predict **whether a flight will be delayed before it happens**, allowing airlines to proactively adjust schedules and resources.
-
-### 🔄 Lifecycle Stages Covered
-This project spans **data collection → cleaning → feature engineering → model building → evaluation**, using aviation data prepared, modeled, and tested for delay-prediction accuracy.
-
-</td>
-</tr>
-</table>
-
-<br>
-
----
-
-## 📚 References
+## 7. 📚 References
 
 1. *A Hybrid Machine Learning-Based Model for Predicting Flight Delay Through Aviation Big Data* — **Scientific Reports**, 2024.
 2. Kroese, D. P., Botev, Z. I., Taimre, T., & Vaisman, R. — ***Data Science and Machine Learning***, 22nd August 2024.
@@ -305,6 +306,6 @@ This project spans **data collection → cleaning → feature engineering → mo
 <div align="center">
 
 ---
-*📘 Compiled for educational purposes — Data Science & Machine Learning Notes*
+*📘  — Data Science & Machine Learning Assignment1*
 
 </div>
