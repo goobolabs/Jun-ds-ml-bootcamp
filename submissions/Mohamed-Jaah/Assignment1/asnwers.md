@@ -1,23 +1,30 @@
 # Data Science and Machine Learning
 
-## How Data Science and Machine Learning Work Together
+## 1. How Data Science and Machine Learning Work Together
 
-Data Science is a field in science that deals with the study of data and also the process of collecting, storing, processing, cleaning and analyzing complex data to extract a meaningful information to support better decision-making.
+__*Data Science*__ is a field in science that deals with the study of data and also the process of collecting, storing, processing, cleaning and analyzing complex data to extract a meaningful information to support better decision-making.
 
-###### In simple way, data science is the process of converting raw data into meaningful information by using mathematics, technology and analyzing technique.
+In simple way, data science is the process of converting raw data into meaningful information by using mathematics, technology and analyzing technique.
 
-Machine Learning  is a subset of artificial intelligence that enables systems to learn from data and improve from experience without being explicitly programmed.
+__*Machine Learning*__  is a subset of artificial intelligence that enables systems to learn from data and improve from experience without being explicitly programmed.
 Instead of hard-coded instructions, ML uses algorithms to identify patterns in historical data and make accurate predictions or decisions on new, unseen data.
+
 Data Science and Machine Learning are closely related fields that work together to solve problems and make better decisions from data.
 Data Science prepares and analyzes the data, while Machine Learning uses that data to build predictive models.
-Data Science lifecycle
-The Data Science Lifecycle is a structured process used to transform raw data into valuable insights and solutions. It consists of 8 phases from identifying problem to deployment.
-1.	Identifying Problem
--	Before any other task, data scientists must know what problem should they want to solve to reach remarkable solutions. So this stage focuses to knowing the problem to be solved.
--	For-example, the government want to know the causes of the subsequent droughts in the country.
-2.	Collecting data 
--	After the government identified the problem scope, it must collects data from all of the regions to gain the answer of what causes continuous droughts. 
--	For-example, data about rainfall, temperature, soil moisture, water levels, and agricultural activity.
+
+
+## 2. Data Science lifecycle
+The Data Science Lifecycle is a structured process used to transform _raw data_ into valuable insights and solutions. It consists of 8 phases from identifying problem to deployment.
+
+___A. Identifying Problem___
+
+Before any other task, data scientists must know what problem should they want to solve to reach remarkable solutions. So this stage focuses to knowing the problem to be solved.
++ For-example, the government want to know the causes of the subsequent droughts in the country.
+
+___B. Collecting data___
+
+After the government identified the problem scope, it must collects data from all of the regions to gain the answer of what causes continuous droughts. 
++ For-example, data about rainfall, temperature, soil moisture, water levels, and agricultural activity.
 
 3.	Data cleaning
 -	after the data has been collected, it must be turn into information to be ready to understand.
@@ -93,6 +100,50 @@ A model learns exam questions by memorizing answers instead of understanding con
 •	It scores 100% in practice exams (training data) 
 •	But fails in the real exam (new data) 
 👉 This is overfitting.
+How Training and Test Data Are Split
+When building a machine learning model, we divide the dataset into two parts:
+1.	Training Data
+This is the part of the data used to train the model.
+•	The model learns patterns from this data 
+•	It includes inputs and correct answers (labels)
+2.	Test Data
+This is the part of the data used to test the model.
+•	The model has never seen this data before 
+•	It is used to check how well the model performs on new data
+How the Split is Done
+The dataset is usually split randomly into percentages like:
+•	80% Training data 
+•	20% Test data
+Example:
+If you have 1,000 data points:
+•	800 are used for training 
+•	200 are used for testing
+Why This Process is Necessary
+We split data to make sure the model is truly learning, not just memorizing.
+Key reasons:
+1. To test real performance
+We want to know how the model performs on new unseen data, not just data it already knows.
+2. To avoid overfitting
+Without test data, a model may just memorize answers and look perfect, but fail in real life.
+
+3. To measure accuracy fairly
+Test data gives a real evaluation of how good the model is.
+One-line Summary
+We split data into training and test sets so we can teach the model and then fairly check how well it works on new, unseen data.
+
+Case Study: Airline Delay Prediction (Machine Learning)
+Overview:
+A research study built a machine learning system to predict flight delays using data like weather, flight history, and airport traffic. The goal is to reduce delays and improve airline operations.
+________________________________________
+How it works:
+The system uses past and real-time flight data to predict if a flight will be delayed before it happens. This helps airlines take early action, such as changing schedules or managing resources.
+________________________________________
+Lifecycle Stages Covered:
+This project covers data collection, cleaning, feature engineering, model building, and evaluation. Researchers used aviation data, prepared it for analysis, trained machine learning models, and tested how accurately they could predict delays on new data.
+
+
+
+
 
 
 
