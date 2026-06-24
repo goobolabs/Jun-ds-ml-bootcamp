@@ -53,3 +53,32 @@ df['Doors'] = df['Doors'].fillna(df['Doors'].mode()[0])
 df['Odometer_km'] = df['Odometer_km'].fillna(df['Odometer_km'].median())
 print('after filled\n',df.isna().sum())
 print(df.describe())
+
+print("\n========= PART FIVE REMOVE DUPLICATES ============")
+print("Before removing duplicates dataset Shape (Rows,Columns):",df.shape)
+df = df.drop_duplicates()
+print("After removed duplicates dataset Shape (Rows,Columns):",df.shape)
+
+print("\n========= PART SIX HANDLE OUTLIERS (IQR CAPPING) ============")
+
+def calculate_iqr_range(series:pd.Series,k=1.5):
+    print(series.name,':')
+    q1,q3 = series.quantile([0.25,0.75])
+    print('Quantiles',[q1,q3])
+    iqr = q3 - q1
+    print('IQR',iqr)
+    lower = q1 - k * iqr
+    upper = q3 + k * iqr
+    print('lower',lower)
+    print('upper',upper)
+    return lower,upper
+
+lower_price,upper_price = calculate_iqr_range(df['Price'])
+lower_odometer_km,upper_odometer_km = calculate_iqr_range(df['Odometer_km'])
+
+print('\nbefore clipping\n',df[['Price','Odometer_km']].describe())
+df['Price'] = df['Price'].clip(lower=lower_price,upper=upper_price)
+df['Odometer_km'] = df['Odometer_km'].clip(lower=lower_odometer_km,upper=upper_odometer_km)
+print('\nafter clipped\n',df[['Price','Odometer_km']].describe())
+
+
