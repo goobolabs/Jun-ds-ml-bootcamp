@@ -87,3 +87,14 @@ df = pd.get_dummies(df,columns=['Location'],drop_first=False)
 
 print(df)
 
+print("\n========= PART EIGHT FEATURE ENGINEERING ============")
+
+CURRENT_YEAR = 2026
+df['Car_Age'] = CURRENT_YEAR - df['Year']
+df['Km_per_year'] = df['Odometer_km'] / df['Car_Age'].replace(0,np.nan)
+df['Is_Urban'] = df['Location_city'].astype(int)
+df['LogPrice'] = np.log1p(df['Price'])
+print(df)
+
+print("\n========= PART NINE FEATURE SCALING ============")
+
