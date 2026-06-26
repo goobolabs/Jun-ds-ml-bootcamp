@@ -1,0 +1,5 @@
+pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.4.2pandas==2.2.2
+numpy==1.26.4
+scikit-learn==1.4.2
