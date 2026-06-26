@@ -1,5 +1,3 @@
-Reflection
-
 Missing Value Decisions
 
 I used the median method for Odometer_km because mileage data often contains outliers, and the median is less affected by extreme values compared to the mean.
