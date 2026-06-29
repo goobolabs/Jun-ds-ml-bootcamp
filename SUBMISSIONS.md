@@ -1,6 +1,6 @@
 # Submission Stats
 
-> Auto-generated report. Last updated: 2026-06-29 13:17 UTC
+> Auto-generated report. Last updated: 2026-06-29 17:00 UTC
 >
 > A student counts as having submitted an assignment if a matching folder exists under their directory in `submissions/`.
 
@@ -13,7 +13,7 @@
 - Assignment 1: **84 sent**, **2 not sent** (out of 86)
 - Assignment 2: **74 sent**, **12 not sent** (out of 86)
 - Assignment 3: **52 sent**, **34 not sent** (out of 86)
-- Assignment 4: **5 sent**, **81 not sent** (out of 86)
+- Assignment 4: **6 sent**, **80 not sent** (out of 86)
 
 ---
 
@@ -87,7 +87,7 @@
 - **mohamed-hagi** — sent assignment 1, assignment 2; did not send assignment 3, assignment 4
 - **Mohamed-Jaah** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
 - **mohanuur117-jpg** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
-- **MUHIYADIN2025** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
+- **MUHIYADIN2025** — sent assignment 1, assignment 2, assignment 3, assignment 4; submitted all tracked assignments
 - **Mukhtar-kaariye** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
 - **muna-adam** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
 - **nastehoabdiaden46-a11y** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
@@ -167,7 +167,7 @@
 33. sicid24
 34. zakaria965
 
-### Assignment 4 (81 not sent)
+### Assignment 4 (80 not sent)
 
 1. abdalegurey
 2. abdi-bashiir
@@ -232,21 +232,20 @@
 61. mohamed-hagi
 62. Mohamed-Jaah
 63. mohanuur117-jpg
-64. MUHIYADIN2025
-65. Mukhtar-kaariye
-66. muna-adam
-67. nastehoabdiaden46-a11y
-68. nimco-nuur
-69. nuunedotdev
-70. Qase0906
-71. rahma-88
-72. sakijamac4-lab
-73. saynis
-74. SeadAbdirizak01
-75. Shiine252
-76. shiine89
-77. sicid24
-78. Spalpha
-79. xanaa-ayan
-80. Yahye-Tech
-81. zakaria965
+64. Mukhtar-kaariye
+65. muna-adam
+66. nastehoabdiaden46-a11y
+67. nimco-nuur
+68. nuunedotdev
+69. Qase0906
+70. rahma-88
+71. sakijamac4-lab
+72. saynis
+73. SeadAbdirizak01
+74. Shiine252
+75. shiine89
+76. sicid24
+77. Spalpha
+78. xanaa-ayan
+79. Yahye-Tech
+80. zakaria965
