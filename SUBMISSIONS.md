@@ -1,6 +1,6 @@
 # Submission Stats
 
-> Auto-generated report. Last updated: 2026-06-29 13:12 UTC
+> Auto-generated report. Last updated: 2026-06-29 13:17 UTC
 >
 > A student counts as having submitted an assignment if a matching folder exists under their directory in `submissions/`.
 
@@ -12,7 +12,7 @@
 
 - Assignment 1: **84 sent**, **2 not sent** (out of 86)
 - Assignment 2: **74 sent**, **12 not sent** (out of 86)
-- Assignment 3: **51 sent**, **35 not sent** (out of 86)
+- Assignment 3: **52 sent**, **34 not sent** (out of 86)
 - Assignment 4: **5 sent**, **81 not sent** (out of 86)
 
 ---
@@ -99,7 +99,7 @@
 - **saynis** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
 - **SeadAbdirizak01** — sent assignment 1, assignment 2; did not send assignment 3, assignment 4
 - **Shiine252** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
-- **shiine89** — sent assignment 1, assignment 2; did not send assignment 3, assignment 4
+- **shiine89** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
 - **sicid24** — sent assignment 2; did not send assignment 1, assignment 3, assignment 4
 - **Spalpha** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
 - **xanaa-ayan** — sent assignment 1, assignment 2, assignment 3; did not send assignment 4
@@ -130,7 +130,7 @@
 11. moelkenzi
 12. zakaria965
 
-### Assignment 3 (35 not sent)
+### Assignment 3 (34 not sent)
 
 1. abdi-bashiir
 2. abdifataha157-tech
@@ -164,9 +164,8 @@
 30. moelkenzi
 31. mohamed-hagi
 32. SeadAbdirizak01
-33. shiine89
-34. sicid24
-35. zakaria965
+33. sicid24
+34. zakaria965
 
 ### Assignment 4 (81 not sent)
 
