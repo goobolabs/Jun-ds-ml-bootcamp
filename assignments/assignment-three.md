@@ -64,7 +64,7 @@ Follow these ten steps, with a brief print checkpoint after each.
 10. **Final Checks & Save**
 
     - Show final info, missing counts (all zero), and a small describe table.
-    - Save the result to **car_l3_clean_ready.csv**.
+    - Save the result to **clean_car_dataset.csv**.
 
 ---
 
