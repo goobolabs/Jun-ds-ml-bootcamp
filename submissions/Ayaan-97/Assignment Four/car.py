@@ -8,7 +8,7 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
 
 # 1. Load Dataset
-df = pd.read_csv('dataset/clean_house_l5_dataset (2).csv')
+df = pd.read_csv('dataset/car-clean-dataset.csv')
 
 # Quick look to ensure everything loaded correctly
 print("Dataset Shape:", df.shape)
@@ -51,7 +51,7 @@ def evaluate_model(model, X_test, y_test, model_name):
     rmse = np.sqrt(mse)
     
     # Print formatted output
-    print(f"{model_name} Performance:")
+    # print(f"{model_name} Performance:")
     print(f"  R²   : {r2:.2f}")
     print(f"  MAE  : {mae:,.0f}")
     print(f"  MSE  : {mse:,.0f}")
