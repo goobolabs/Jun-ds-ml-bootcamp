@@ -21,7 +21,11 @@
      - **Observations** (e.g., note down prices in local shops, sports scores, student grades).
      - **Web scraping / manual logging** (e.g., collect product prices from a site, count hashtags on social media).
 
+<<<<<<< HEAD
    - The dataset can be **messy** (missing values, categorical text, mixed formats). We will clean and preprocess it in **Lesson 4**.
+=======
+   - The dataset can be **messy** (missing values, categorical text, mixed formats). We will clean and preprocess it in **Lesson 3**.
+>>>>>>> upstream/main
 
 ---
 
@@ -37,6 +41,12 @@
 ---
 
 This assignment ensures you **experience real-world data collection**, not just theory.
+<<<<<<< HEAD
 In **Lesson 4**, we will take your datasets and apply **preprocessing (cleaning, encoding, scaling, feature engineering)**.
 
 ---
+=======
+In **Lesson 3**, we will take your datasets and apply **preprocessing (cleaning, encoding, scaling, feature engineering)**.
+
+---
+>>>>>>> upstream/main
