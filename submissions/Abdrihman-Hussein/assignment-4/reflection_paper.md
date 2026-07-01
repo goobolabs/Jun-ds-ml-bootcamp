@@ -235,19 +235,3 @@ Machine learning is not about using the most complex model—it's about finding 
 
 ---
 
-## References
-
-1. Géron, A. (2022). *Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow*. O'Reilly Media.
-
-2. James, G., et al. (2021). *An Introduction to Statistical Learning*. Springer.
-
-3. Scikit-learn Documentation: Model evaluation and selection. Retrieved from https://scikit-learn.org/
-
-4. Kaggle. (2023). Machine Learning Best Practices. Retrieved from https://www.kaggle.com/
-
----
-
-**Submitted by**: Abdrihman Hussein  
-**Date**: July 2026  
-**Course**: Data Science & ML Bootcamp  
-**Assignment**: 4 - Regression Models
