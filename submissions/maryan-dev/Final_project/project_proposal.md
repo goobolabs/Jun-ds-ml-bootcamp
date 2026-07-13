@@ -178,6 +178,3 @@ uvicorn api.app:app --reload
 
 ---
 
-# Expected Outcome
-
-The final project will develop a machine learning application capable of predicting the severity of Problematic Internet Use while also identifying hidden behavioral groups through clustering. Multiple supervised learning algorithms will be compared to select the best predictive model, while clustering algorithms will provide additional insights into children's internet usage patterns. The final solution will be deployed as a FastAPI REST API capable of returning prediction results and confidence scores from user-provided data.
