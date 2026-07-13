@@ -28,7 +28,8 @@ Since the target variable (**Price**) is a continuous numerical value, this proj
 
 ## 4. Dataset
 
-**Source:** Kaggle – Laptop Price Prediction Dataset
+**Source:** Kaggle – Laptop Price Prediction Dataset 
+https://www.kaggle.com/datasets/eslamelsolya/laptop-price-prediction
 
 **Dataset Size:** Approximately **1,300** laptop records
 
@@ -56,6 +57,8 @@ The following machine learning regression algorithms will be trained and compare
 * Random Forest Regressor
 * XGBoost Regressor
 * CatBoost Regressor
+* Linear regration
+
 
 The best-performing model will be selected based on evaluation metrics.
 
