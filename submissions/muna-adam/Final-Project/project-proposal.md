@@ -54,7 +54,7 @@ Using these inputs, the model predicts whether an individual is **at risk of pul
 
 **Kaggle – Lung Cancer Prediction Dataset**
 
-Dataset https://www.kaggle.com/datasets/aagambshah/lung-cancer-dataset
+Dataset https://www.kaggle.com/datasets/shantanugarg274/lung-cancer-prediction-dataset
 
 ## Size
 
