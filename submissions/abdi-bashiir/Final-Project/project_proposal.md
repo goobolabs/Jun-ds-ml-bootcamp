@@ -1,213 +1,124 @@
 # Final Project Proposal
 
-## Certificate Name
+## 1. Certificate Name
 
-**Abdidahir Bashir Ali**
-
----
-
-# Project Title
-
-## Water Potability Prediction System Using Machine Learning
+**Abdi Bashir Ali**
 
 ---
 
-# Project Overview
+## 2. Project Title and Description
 
-Access to safe drinking water is essential for public health. However, traditional laboratory testing is often time-consuming, expensive, and requires specialized equipment. This project aims to develop a machine learning-based system that predicts whether water is safe for drinking using physicochemical measurements. In addition to predicting water potability, the system will estimate the associated risk level and provide practical recommendations to help users make informed decisions.
+### Project Title
+**Appliances Energy Consumption Prediction API** 
 
----
-
-# Project Objectives
-
-- Predict whether water is safe for drinking.
-- Compare multiple machine learning classification algorithms.
-- Build an end-to-end machine learning pipeline.
-- Deploy the best-performing model using a Flask REST API.
-- Provide users with a simple risk assessment and recommendation based on the prediction.
+### Description
+Energy consumption in modern homes is continuously increasing, leading to higher electricity costs and greater environmental impact. This project aims to develop a machine learning regression model that predicts the energy consumption of household appliances based on indoor sensor measurements and weather-related data. The final solution will be deployed as a FastAPI application that accepts sensor values as input and returns the predicted appliance energy consumption. This system can help homeowners and energy management systems monitor and optimize electricity usage.
 
 ---
 
-# Problem Type
+## 3. Problem Type
 
-**Supervised Machine Learning**
+**Regression**
 
-**Task:** Binary Classification
-
-### Target Variable
-
-- **Potability = 1** → Safe for drinking
-- **Potability = 0** → Unsafe for drinking
+This project is a regression problem because it predicts a continuous numerical value: the energy consumption of household appliances measured in Watt-hours (Wh).
 
 ---
 
-# Dataset Information
+## 4. Dataset
 
-## Dataset Name
+- **Dataset Name:** Appliances Energy Prediction
+- **Source:** UCI Machine Learning Repository
+- **Dataset Link:** https://archive.ics.uci.edu/dataset/380/appliances+energy+prediction
+- **Expected Size:** 19,735 rows
+- **Target Column:** `Appliances` (Energy consumption in Watt-hours)
+**Main Features:**
+- Indoor temperature sensors (`T1`–`T9`)
+- Indoor humidity sensors (`RH_1`–`RH_9`)
+- Outdoor temperature (`T_out`)
+- Outdoor humidity (`RH_out`)
+- Atmospheric pressure (`Press_mm_hg`)
+- Wind speed (`Windspeed`)
+- Visibility (`Visibility`)
 
-Water Potability Dataset
-
-## Dataset Source
-
-https://www.kaggle.com/datasets/adityakadiwal/water-potability
-
-## Dataset Size
-
-- Total Records: **3,276**
-- Total Features: **9**
-- Target Column: **Potability**
-
-## Input Features
-
-- pH
-- Hardness
-- Solids
-- Chloramines
-- Sulfate
-- Conductivity
-- Organic Carbon
-- Trihalomethanes
-- Turbidity
+These features provide environmental and weather information that influences household energy consumption.
 
 ---
 
-# Data Preprocessing Plan
+## 5. Algorithms I Plan to Train
 
-The dataset will undergo the following preprocessing steps:
+| Algorithm | Reason for Selection |
+|------------|---------------------|
+| **Linear Regression** | It serves as a simple and interpretable baseline model for predicting continuous values. |
+| **Random Forest Regressor** | It captures complex nonlinear relationships and usually provides strong predictive performance on tabular datasets. |
+| **Gradient Boosting Regressor** | It is an advanced ensemble algorithm that often achieves high prediction accuracy by combining multiple weak learners. |
 
-- Handle missing values
-- Remove duplicate records
-- Detect and treat outliers
-- Scale numerical features using StandardScaler
-- Split the dataset into training and testing sets
-
-### Feature Engineering
-
-The project will also include:
-
-- Feature importance analysis
-- Feature selection (if necessary)
+These three algorithms will be trained and compared to identify the best-performing regression model.
 
 ---
 
-# Exploratory Data Analysis (EDA)
+## 6. Evaluation Plan
 
-The exploratory analysis will include:
+The following evaluation metrics will be used to compare all regression models:
 
-- Dataset summary
-- Missing value analysis
-- Class distribution
-- Feature distributions
-- Histograms
-- Boxplots
-- Correlation heatmap
-- Feature relationship analysis
+- Mean Absolute Error (MAE)
+- Root Mean Squared Error (RMSE)
+- R² Score
 
----
+**Best Model Selection**
 
-# Machine Learning Models
-
-The following machine learning models will be trained and compared:
-
-- Logistic Regression
-- Decision Tree Classifier
-- Random Forest Classifier
-- XGBoost Classifier
-
-The model with the best performance will be selected for deployment.
+The best model will be selected primarily based on the **highest R² Score**, while also considering the **lowest RMSE**. These metrics provide a reliable measure of prediction accuracy and overall model performance for regression tasks.
 
 ---
 
-# Evaluation Plan
+## 7. Deployment Sketch
 
-The models will be evaluated using:
+- **Framework:** FastAPI
+- **Endpoint:** `POST /predict`
 
-- Accuracy
-- Precision
-- Recall
-- F1-Score
-- ROC-AUC Score
-- Confusion Matrix
+### Input (JSON)
 
-Since correctly identifying unsafe drinking water is especially important, **F1-Score** will be used as the **primary evaluation metric** for selecting the best-performing model.
+```json
+{
+  "T1": 21.5,
+  "RH_1": 45.0,
+  "T_out": 12.8,
+  "RH_out": 78.0,
+  "Windspeed": 5.3,
+  "Press_mm_hg": 755.0
+}
+```
+
+### Output (JSON)
+
+```json
+{
+  "predicted_energy_wh": 98.74
+}
+```
+
+The API will receive sensor measurements and weather information, then return the predicted household appliance energy consumption in Watt-hours.
 
 ---
 
-# Repository Plan
+## 8. Repository Plan
 
 ```text
-water-potability-prediction/
-│
+energy-prediction-api/
 ├── dataset/
-│   └── water_potability.csv
-│
-├── notebooks/
-│   ├── eda.ipynb
-│   └── model_training.ipynb
-│
+│   └── energy_data.csv
 ├── src/
 │   ├── preprocess.py
 │   ├── train.py
-│   ├── evaluate.py
-│   └── predict.py
-│
+│   └── evaluate.py
+├── api/
+│   └── app.py
 ├── models/
-│   └── water_model.pkl
-│
-├── app.py
-├── requirements.txt
+│   └── best_model.pkl
+├── notebooks/
+│   └── experimentation.ipynb
 ├── README.md
-└── .gitignore
+├── requirements.txt
+└── project_paper.md
 ```
 
----
-
-# Deployment Plan
-
-The selected machine learning model will be saved using **Joblib** and deployed through a **Flask REST API**.
-
-The API will receive water quality measurements as a JSON request and return the predicted water status, risk level, and recommendation.
-
-## Example Request
-
-```json
-{
-  "ph": 7.2,
-  "hardness": 204,
-  "solids": 18000,
-  "chloramines": 7.5,
-  "sulfate": 320,
-  "conductivity": 410,
-  "organic_carbon": 12,
-  "trihalomethanes": 70,
-  "turbidity": 3.5
-}
-```
-
-## Example Response
-
-```json
-{
-  "prediction": "Not Potable",
-  "risk_level": "High",
-  "recommendation": "This water is not recommended for drinking. Boil or treat the water before use and consider laboratory testing."
-}
-```
-
-### Risk Level Strategy
-
-The risk level will be determined using the model's prediction probability:
-
-- **Low Risk** → High confidence that the water is potable.
-- **Medium Risk** → Moderate prediction confidence; further testing is recommended.
-- **High Risk** → High confidence that the water is unsafe for drinking.
-
-### Recommendation Strategy
-
-Recommendations will be generated using simple rule-based logic based on the predicted class and risk level rather than a separate machine learning model.
-
----
-
-# Expected Outcome
-
-The project will deliver an end-to-end machine learning application capable of predicting water potability using physicochemical measurements. The final solution will include data preprocessing, exploratory data analysis, feature engineering, model comparison, model evaluation, and deployment through a Flask REST API with a simple user interface. In addition to predicting whether water is safe for drinking, the application will provide a risk assessment and practical recommendations to support decision-making.
+This repository structure separates data, source code, trained models, API implementation, documentation, and experimentation notebooks, making the project organized, maintainable, and easy to deploy.
