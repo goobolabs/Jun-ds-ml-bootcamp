@@ -4,10 +4,10 @@ MAYMUN ADEN MOHAMED
 
 # 2. Project Title and Description
 
-## Project Title
 **Pulmonary Disease Prediction Using Machine Learning**
 
 ## Project Description
+
 This project aims to predict whether a person is at risk of pulmonary disease using demographic information, lifestyle habits, medical history, and health-related symptoms.
 
 The machine learning model analyzes features such as:
@@ -26,6 +26,7 @@ Based on these features, the model classifies individuals as either:
 - **Not At Risk of Pulmonary Disease**
 
 The project demonstrates how machine learning can support healthcare researchers, students, and medical professionals by assisting in disease risk prediction and early assessment using healthcare data.
+
 ## 3. Problem Type
 
 ### Classification (Binary Classification)
@@ -46,20 +47,21 @@ The machine learning model learns patterns from patient information, including:
 - Other health-related features
 
 Using these inputs, the model predicts whether an individual is **at risk of pulmonary disease** or **not at risk of .
-a# 4. Dataset
+
+# 4. Dataset
 
 ## Source
+
 **Kaggle – Lung Cancer Prediction Dataset**
 
-Dataset Linhttps://www.kaggle.com/datasets/shantanugarg274/lung-cancer-prediction-datasetindex=0}
+Dataset https://www.kaggle.com/datasets/aagambshah/lung-cancer-dataset
 
 ## Size
+
 - **Rows (Instances):** 5,000
-- **Columns:** 18
-  - **17 Input Features**
-  - **1 Target (Lte:1]{index=1}
 
 ## Target Column
+
 **PULMONARY_DISEASE**
 
 This is the target variable used for binary classification. It indicates whether an individual has pulmonary disease.
@@ -89,8 +91,6 @@ This is the target variable used for binary classification. It indicates whether
 | Alcohol_Consumption | Alcohol consumption status. |
 | Respiratory_Infections | History of respiratory infections. |
 
-These features are used to train a machine learning model to predict whet
-
 # 5. Algorithms You Plan to Train
 
 The following machine learning algorithms will be trained and compared to determine which model performs best for predicting pulmonary disease.
@@ -102,14 +102,7 @@ The following machine learning algorithms will be trained and compared to determ
 | **Random Forest Classifier** | Random Forest combines multiple decision trees to improve prediction accuracy, reduce overfitting, and handle complex healthcare data effectively. |
 | **XGBoost Classifier** | XGBoost is an advanced ensemble learning algorithm that often achieves high performance by efficiently learning complex patterns in structured datasets. |
 
-## Algorithms from the Bootcamp
-- ✅ Logistic Regression
-- ✅ Decision Tree
-- ✅ Random Forest
-
-## Additional Researched Algorithm
-- ✅ XGBoost
-d# 6. Evaluation Plan
+# 6. Evaluation Plan
 
 To evaluate and compare the performance of the machine learning models, the following classification metrics will be used:
 
@@ -132,37 +125,35 @@ tion problem.able metric than Accuracy alone for selecting the best overall mode
 
 This project will be deployed using **Streamlit**, which provides an interactive web application for the machine learning model. Users will enter patient information through a simple web interface, and the application will instantly display the predicted lung cancer risk level.
 
-### User Input
-
-The Streamlit application will allow users to enter the following information:
-
-- Age
-- Gender
-- Air Pollution
-- Alcohol Use
-- Dust Allergy
-- Occupational Hazards
-- Genetic Risk
-- Chronic Lung Disease
-- Smoking
-- Passive Smoker
-- Chest Pain
-- Coughing of Blood
-- Fatigue
-- Weight Loss
-- Shortness of Breath
-- Wheezing
-- Swallowing Difficulty
-- Dry Cough
-
-### Output
-
-After clicking the **Predict** button, the application will display:
-
-- **Predicted Lung Cancer Risk Level** (Low, Medium, or High)
-- **Prediction Confidence (Probability)**
+## User Input
+
+The Streamlit application will allow users to enter the following information:
+
+- Age
+- Gender
+- Smoking
+- Finger Discoloration
+- Mental Stress
+- Exposure to Pollution
+- Long-Term Illness
+- Energy Level
+- Immune Weakness
+- Breathing Issue
+- Alcohol Consumption
+- Throat Discomfort
+- Oxygen Saturation
+- Chest Tightness
+- Family History
+- Smoking Family History
+- Stress Immune
+
+## Output
+
+After clicking the **Predict** button, the application will display:
+
+- **Predicted Pulmonary Disease Status** (Yes or No)
+- **Prediction Confidence (%)**
 - **Risk Status:** High Risk or Low Risk based on the model's prediction
-
 
 ## 8. Repository Plan
 
