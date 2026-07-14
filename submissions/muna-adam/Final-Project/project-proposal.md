@@ -1,93 +1,125 @@
-## 1. Certificate Name
+# 1. Certificate Name
 
 MAYMUN ADEN MOHAMED
 
-## 2. Project Title and Description
+# 2. Project Title and Description
 
-**Lung Cancer Risk Level Prediction System**
+**Pulmonary Disease Prediction Using Machine Learning**
 
-### Project Description
+## Project Description
 
-Lung cancer is one of the leading causes of cancer-related deaths worldwide, and early risk assessment can help improve prevention, diagnosis, and treatment outcomes.
+This project aims to predict whether a person is at risk of pulmonary disease using demographic information, lifestyle habits, medical history, and health-related symptoms.
 
-This project develops a machine learning model that predicts a patient's **lung cancer risk level** (**Low**, **Medium**, or **High**) based on demographic information, lifestyle factors, environmental exposure, and medical symptoms, including:
+The machine learning model analyzes features such as:
 
 - Age
-- Smoking
-- Air Pollution
-- Alcohol Use
-- Genetic Risk
-- Chest Pain
-- Wheezing
-- Shortness of Breath
-- Other clinically relevant factors
+- Smoking status
+- Exposure to pollution
+- Breathing issues
+- Oxygen saturation (SpO₂)
+- Family history of pulmonary disease
+- Other relevant health indicators
 
-The goal is to provide an intelligent decision-support tool that helps healthcare professionals identify high-risk individuals more efficiently and encourages early medical evaluation.
+Based on these features, the model classifies individuals as either:
+
+- **At Risk of Pulmonary Disease**
+- **Not At Risk of Pulmonary Disease**
+
+The project demonstrates how machine learning can support healthcare researchers, students, and medical professionals by assisting in disease risk prediction and early assessment using healthcare data.
 
 ## 3. Problem Type
 
-### Problem Type: Multi-Class Classification
+### Classification (Binary Classification)
 
-This project is a **multi-class classification** problem because the target variable, **Level**, contains three categories:
+This project is a **binary classification** problem because the objective is to predict a categorical outcome rather than a continuous numerical value. The target variable, **PULMONARY_DISEASE**, has two possible classes:
 
-- **Low**
-- **Medium**
-- **High**
+- **1** – Has Pulmonary Disease
+- **0** – Does Not Have Pulmonary Disease
 
-The machine learning model will learn from patient demographic information, lifestyle factors, environmental exposure, and medical symptoms to predict the correct lung cancer risk level for a new patient.
+The machine learning model learns patterns from patient information, including:
 
-## 4. Dataset
+- Age
+- Smoking status
+- Exposure to pollution
+- Breathing issues
+- Oxygen saturation (SpO₂)
+- Family history
+- Other health-related features
 
-### Source
+Using these inputs, the model predicts whether an individual is **at risk of pulmonary disease** or **not at risk of .
 
-The dataset was obtained from **Kaggle**.
+# 4. Dataset
 
-**Dataset Link:**  
-https://www.kaggle.com/datasets/thedevastator/cancer-patients-and-air-pollution-a-new-link
+## Source
 
-### Size
+**Kaggle – Lung Cancer Prediction Dataset**
 
-The dataset contains **1,000 rows** and **18 columns**. It includes demographic information, lifestyle factors, environmental exposure, and medical symptoms related to lung cancer risk.
+Dataset https://www.kaggle.com/datasets/shantanugarg274/lung-cancer-prediction-dataset
 
-### Target Column
+## Size
 
-**Target Column:** `Level`
+- **Rows (Instances):** 5,000
 
-The **Level** column represents the predicted lung cancer risk category for each patient. It contains three classes:
+## Target Column
 
-- **Low** – Low risk of lung cancer.
-- **Medium** – Moderate risk of lung cancer.
-- **High** – High risk of lung cancer.
+**PULMONARY_DISEASE**
 
-This makes the project a **multi-class classification** problem.
+This is the target variable used for binary classification. It indicates whether an individual has pulmonary disease.
 
-## 5. Algorithms I Plan to Train
+- **1** = Has Pulmonary Disease
+- **0** = Does Not Have Pulmonary Disease
 
-To identify the best-performing model, I will train and compare multiple classification algorithms. Since the target variable (**Level**) has three categories (**Low**, **Medium**, and **High**), this project is a **multi-class classification** problem.
+## Main Features
+| Feature | Description |
+|---------|-------------|
+| Age | Age of the individual. |
+| Gender | Gender of the individual. |
+| Smoking | Indicates whether the individual is a smoker. |
+| Finger_Discoloration | Presence of finger discoloration. |
+| Mental_Stress | Level of mental stress experienced by the individual. |
+| Exposure_to_Pollution | Level of exposure to environmental air pollution. |
+| Long_Term_Illness | Indicates whether the individual has a long-term illness. |
+| Energy_Level | Energy level of the individual. |
+| Immune_Weakness | Indicates whether the individual has a weakened immune system. |
+| Breathing_Issue | Presence of breathing difficulties. |
+| Alcohol_Consumption | Alcohol consumption status. |
+| Throat_Discomfort | Presence of throat discomfort. |
+| Oxygen_Saturation | Blood oxygen (SpO₂) level. |
+| Chest_Tightness | Presence of chest tightness. |
+| Family_History | Family history of pulmonary disease. |
+| Smoking_Family_History | Family history of smoking. |
+| Stress_Immune | Indicates whether stress has affected the immune system. |
+| Pulmonary_Disease | **Target variable** indicating whether the individual has pulmonary disease (Yes/No). |
+y disease (Yes/No). |
+sease (Yes/No). |
+```
+# 5. Algorithms You Plan to Train
 
-| ### | Algorithm | Why It Fits |
-|---|-----------|-------------|
-| 1 | Logistic Regression | Logistic Regression will be used as a baseline model because it supports multi-class classification and provides an easy-to-interpret benchmark for comparing more advanced models. |
-| 2 | Decision Tree Classifier | Decision Trees are suitable because they can learn decision rules from patient symptoms, lifestyle factors, and environmental risk factors, making the predictions easy to understand and explain. |
-| 3 | Random Forest Classifier | Random Forest combines multiple decision trees, making it more accurate and less likely to overfit. It performs well on structured medical datasets with many health-related features. |
-| 4 | Gradient Boosting Classifier | Gradient Boosting is a powerful ensemble algorithm that captures complex relationships between multiple lung cancer risk factors and often achieves high predictive performance on tabular datasets. |
+The following machine learning algorithms will be trained and compared to determine which model performs best for predicting pulmonary disease.
 
-## 6. Evaluation Plan
+| Algorithm | Why It Fits This Problem |
+|-----------|---------------------------|
+| **Logistic Regression** | Logistic Regression is a strong baseline algorithm for binary classification and predicts whether a patient has pulmonary disease (1) or not (0). |
+| **Decision Tree Classifier** | Decision Tree can capture non-linear relationships between patient characteristics and disease status, while also providing easy-to-understand decision rules. |
+| **Random Forest Classifier** | Random Forest combines multiple decision trees to improve prediction accuracy, reduce overfitting, and handle complex healthcare data effectively. |
+| **XGBoost Classifier** | XGBoost is an advanced ensemble learning algorithm that often achieves high performance by efficiently learning complex patterns in structured datasets. |
 
-To compare the performance of all classification models, I will use the following evaluation metrics:
+# 6. Evaluation Plan
 
-- **Accuracy** – Measures the overall percentage of correctly classified patients.
-- **Precision** – Measures how many patients predicted to belong to a specific risk level are actually in that risk level.
-- **Recall** – Measures how many patients in each actual risk level are correctly identified by the model.
-- **F1-Score** – Balances Precision and Recall, providing a reliable measure of overall classification performance, especially when class distributions are not perfectly balanced.
+To evaluate and compare the performance of the machine learning models, the following classification metrics will be used:
 
-### Best Model Selection
+- **Accuracy** – Measures the overall percentage of correctly classified predictions.
+- **Precision** – Measures how many patients predicted to have pulmonary disease actually have the disease.
+- **Recall** – Measures how many actual pulmonary disease cases are correctly identified by the model.
+- **F1-Score** – Combines Precision and Recall into a single metric, providing a balanced measure of model performance.
 
-The best model will be selected based on the **F1-Score**.
+## Best Model Selection
 
-**Reason:**  
+The **F1-Score** will be used as the primary metric to select the best model.
 
-This project is a **multi-class classification** problem with three classes (**Low**, **Medium**, and **High**). The **F1-Score** is the most appropriate metric because it balances **Precision** and **Recall**, ensuring that the model not only makes accurate predictions but also correctly identifies patients in each lung cancer risk category. This makes it a more reliable metric than Accuracy alone for selecting the best overall model.
+**Reason:** In disease prediction, both **False Positives** and **False Negatives** are important. A model with a high F1-Score balances **Precision** and **Recall**, making it more reliable for identifying patients at risk while minimizing incorrect predictions. Therefore, F1-Score is a more suitable metric than Accuracy alone for this binary classifica
+
+tion problem.able metric than Accuracy alone for selecting the best overall model.
 
 ## 7. Deployment Sketch
 
@@ -95,37 +127,35 @@ This project is a **multi-class classification** problem with three classes (**L
 
 This project will be deployed using **Streamlit**, which provides an interactive web application for the machine learning model. Users will enter patient information through a simple web interface, and the application will instantly display the predicted lung cancer risk level.
 
-### User Input
-
-The Streamlit application will allow users to enter the following information:
-
-- Age
-- Gender
-- Air Pollution
-- Alcohol Use
-- Dust Allergy
-- Occupational Hazards
-- Genetic Risk
-- Chronic Lung Disease
-- Smoking
-- Passive Smoker
-- Chest Pain
-- Coughing of Blood
-- Fatigue
-- Weight Loss
-- Shortness of Breath
-- Wheezing
-- Swallowing Difficulty
-- Dry Cough
-
-### Output
-
-After clicking the **Predict** button, the application will display:
-
-- **Predicted Lung Cancer Risk Level** (Low, Medium, or High)
-- **Prediction Confidence (Probability)**
-
-The interface will be simple, interactive, and user-friendly, allowing users to quickly enter patient information and receive an instant lung cancer risk level prediction.
+## User Input
+
+The Streamlit application will allow users to enter the following information:
+
+- Age
+- Gender
+- Smoking
+- Finger Discoloration
+- Mental Stress
+- Exposure to Pollution
+- Long-Term Illness
+- Energy Level
+- Immune Weakness
+- Breathing Issue
+- Alcohol Consumption
+- Throat Discomfort
+- Oxygen Saturation
+- Chest Tightness
+- Family History
+- Smoking Family History
+- Stress Immune
+
+## Output
+
+After clicking the **Predict** button, the application will display:
+
+- **Predicted Pulmonary Disease Status** (Yes or No)
+- **Prediction Confidence (%)**
+- **Risk Status:** High Risk or Low Risk based on the model's prediction
 
 ## 8. Repository Plan
 
@@ -135,11 +165,18 @@ The GitHub repository will be organized to keep the project files clear, simple,
 lung-cancer-risk-level-prediction/
 │
 ├── dataset/                 # Contains the dataset used for training and evaluation
-│   └── lung_cancer_data.csv
+│   └── pulmonary_disease.csv
 │
-├── models/                  # Stores the trained machine learning model(s)
-│   ├── lung_cancer_model.pkl
-│   └── label_encoder.pkl
+├── models/                  # Trained machine learning files
+│   ├── best_model.pkl
+│   └── scaler.pkl
+│
+├── app.py                   # Main Streamlit application (User interface and prediction)
+│
+├── README.md                # Project overview, setup instructions, and usage guide
+│
+├── project_paper.md         # Detailed project report and documentation
+```_encoder.pkl
 │
 ├── app.py                   # Main Streamlit application (User interface and prediction)
 │
