@@ -12,35 +12,38 @@
 
 ## 2. Project Title and Description
 
-**Title:** Crop Recommendation API
+**Title:** Phishing Website Detection API
 
-Farmers often decide what to plant based on habit or guesswork, even though soil nutrients and local weather conditions play a big role in whether a crop will actually thrive. This matters a lot in an economy like Ethiopia's, where agriculture is a major source of income and food security depends on getting these decisions right. This project builds a model that takes a few measurable inputs, soil nitrogen, phosphorus, and potassium levels, along with temperature, humidity, rainfall, and pH, and recommends the crop best suited to those conditions. An extension officer, a cooperative, or even a farmer with a soil test kit could use this to make a more informed planting decision instead of relying on guesswork.
+Phishing websites trick people into handing over passwords, card numbers, and other personal details by imitating trusted sites like banks or mobile money platforms. Attackers keep changing domain names and page content, but the underlying structure of a phishing URL, things like its length, whether it hides behind an IP address, or how it uses subdomains, tends to follow recognizable patterns. This project builds a model that looks at those structural features of a website and predicts whether it is phishing or legitimate. A browser extension, an email filter, or a security team could use an API like this as an early warning check before a user ever clicks through.
 
 ---
 
 ## 3. Problem Type
 
-**Classification**: this is a multi-class problem. Given a set of soil and climate readings, the model picks one crop out of 22 possible options as its recommendation.
+**Classification**: the target is binary, a website is either `phishing` or `legitimate`.
 
-This is supervised learning. Each row in the dataset already has a known best-fit crop label, so the model learns the relationship between conditions and crop from those examples.
+This is supervised learning. The dataset already contains websites that have been manually verified and labeled by security researchers, so the model learns from those confirmed examples.
 
 ---
 
 ## 4. Dataset
 
-- **Source:** [Crop Recommendation Dataset](https://www.kaggle.com/datasets/atharvaingle/crop-recommendation-dataset) (Kaggle).
-- **Size:** 2,200 rows, 8 columns. The dataset is clean, with no missing values, and evenly balanced across all 22 crop classes (100 rows per crop).
-- **Target column:** `label`, the recommended crop. There are 22 possible values, including rice, maize, chickpea, coffee, cotton, banana, mango, and others.
+- **Source:** [Phishing Websites Dataset](https://archive.ics.uci.edu/dataset/327/phishing+websites) (UCI Machine Learning Repository, also mirrored on Kaggle).
+- **Size:** 11,055 rows, 32 features.
+- **Target column:** `Result`, whether the website is phishing or legitimate.
 - **Main features:**
-  - `N`: nitrogen content in the soil
-  - `P`: phosphorus content in the soil
-  - `K`: potassium content in the soil
-  - `temperature`: average temperature in degrees Celsius
-  - `humidity`: relative humidity as a percentage
-  - `ph`: soil pH level
-  - `rainfall`: rainfall in millimeters
+  - `having_IP_Address`: whether the URL uses a raw IP address instead of a domain name
+  - `URL_Length`: whether the URL is unusually long
+  - `Shortining_Service`: whether a URL-shortening service was used
+  - `having_At_Symbol`: whether the URL contains an `@` symbol
+  - `SSLfinal_State`: the state of the site's SSL certificate
+  - `having_Sub_Domain`: how many subdomains the URL has
+  - `Domain_registeration_length`: how long the domain has been registered for
+  - `age_of_domain` and `web_traffic`: how established and how visited the site is
 
-**Preprocessing plan:** since the dataset has no missing values, preprocessing mainly means scaling the numeric features (all seven are numeric), encoding the `label` column for models that need numeric targets, and splitting into an 80/20 train/test set, stratified on `label` so every crop is represented proportionally in both sets.
+Most features in this dataset are already encoded as small numeric categories (for example -1, 0, 1), which makes it a clean fit for classic classification models.
+
+**Preprocessing plan:** check for and handle any missing values, confirm all features are in a consistent numeric encoding, scale where needed, and split into an 80/20 train/test set, stratified on `Result` so both sets keep a similar phishing-to-legitimate ratio.
 
 ---
 
@@ -48,11 +51,11 @@ This is supervised learning. Each row in the dataset already has a known best-fi
 
 | # | Algorithm | Why it fits |
 | --- | --- | --- |
-| 1 | **Logistic Regression (multinomial)** | Bootcamp baseline extended to multi-class. Gives a simple, interpretable starting point before trying more complex models. |
-| 2 | **Random Forest** | Bootcamp ensemble method. Naturally handles multi-class problems and tends to perform well on this kind of dataset without much tuning. |
-| 3 | **K-Nearest Neighbors (KNN)** | I'll research this one on my own. Since the classes are well separated by soil and climate values, a distance-based method like KNN is a reasonable candidate for strong performance here. |
+| 1 | **Logistic Regression** | Bootcamp baseline for binary classification. With mostly categorical-style features already encoded numerically, it gives a fast, interpretable starting point. |
+| 2 | **Random Forest** | Bootcamp ensemble method. Handles the mix of binary and multi-valued categorical features well, and can highlight which URL characteristics matter most for detecting phishing. |
+| 3 | **XGBoost** | I'll research this one on my own. Gradient-boosted trees are widely used in phishing and fraud detection work and are a strong candidate for the best-performing model here. |
 
-That covers the minimum of three. Two come from the bootcamp lessons, and KNN is the one I'll dig into through the scikit-learn documentation. I may add Support Vector Machine or Gradient Boosting as a fourth if time allows.
+That covers the minimum of three. Two come from the bootcamp lessons, and XGBoost is the one I'll dig into through its documentation and a tutorial or two. I may add an SVM as a fourth if time allows.
 
 ---
 
@@ -61,12 +64,12 @@ That covers the minimum of three. Two come from the bootcamp lessons, and KNN is
 **Metrics for all three models, measured on the same held-out test set:**
 
 - Accuracy
-- Precision (weighted average across all 22 classes)
-- Recall (weighted average across all 22 classes)
-- F1-Score (weighted average across all 22 classes)
+- Precision
+- Recall
+- F1-Score
 - Confusion Matrix
 
-**Best-model rule:** I'll rank the models by **weighted F1-Score**. With 22 classes, a single wrong prediction can hurt one crop's precision or recall much more than another's, so a weighted average keeps the comparison fair across classes of equal size. Since the dataset is balanced, accuracy should track closely with F1 here, but F1 remains the primary rule in case any model performs unevenly across specific crops.
+**Best-model rule:** I'll rank the models by **F1-Score**. In phishing detection, missing an actual phishing site (low recall) puts a user at risk, while wrongly flagging a legitimate site (low precision) damages trust in the tool. F1 balances both concerns instead of favoring one. If two models land close on F1, I'll use Recall as the tiebreaker, since letting a phishing site through is generally the more costly mistake.
 
 ---
 
@@ -78,13 +81,15 @@ That covers the minimum of three. Two come from the bootcamp lessons, and KNN is
 
 ```json
 {
-  "N": 90,
-  "P": 42,
-  "K": 43,
-  "temperature": 20.87,
-  "humidity": 82.0,
-  "ph": 6.5,
-  "rainfall": 202.9
+  "having_IP_Address": -1,
+  "URL_Length": 1,
+  "Shortining_Service": -1,
+  "having_At_Symbol": 1,
+  "SSLfinal_State": -1,
+  "having_Sub_Domain": 0,
+  "Domain_registeration_length": -1,
+  "age_of_domain": -1,
+  "web_traffic": 0
 }
 ```
 
@@ -92,30 +97,29 @@ That covers the minimum of three. Two come from the bootcamp lessons, and KNN is
 
 ```json
 {
-  "prediction": "rice",
-  "probability": 0.94
+  "prediction": "phishing",
+  "probability": 0.91
 }
 ```
 
-The API loads the winning model from `models/best_model.pkl`, along with the fitted scaler and label encoder, so incoming JSON gets preprocessed the same way the training data was, and the numeric prediction gets mapped back to a crop name before the response is sent.
+The API loads the winning model from `models/best_model.pkl`, along with any fitted scaler, so incoming JSON gets preprocessed the same way the training data was before a prediction is returned.
 
 ---
 
 ## 8. Repository Plan
 
 ```
-crop-recommendation-api/
+phishing-detection-api/
 ├── dataset/
-│   └── crop_recommendation.csv
+│   └── phishing_websites.csv
 ├── src/
-│   ├── preprocess.py      # scaling, label encoding, train/test split
+│   ├── preprocess.py      # cleaning, scaling, train/test split
 │   └── train.py           # trains all three models, prints comparison table, saves best
 ├── api/
 │   └── app.py              # FastAPI app with /predict
 ├── models/
 │   ├── best_model.pkl
-│   ├── scaler.pkl
-│   └── label_encoder.pkl
+│   └── scaler.pkl
 ├── README.md
 ├── requirements.txt
 └── project_paper.md
