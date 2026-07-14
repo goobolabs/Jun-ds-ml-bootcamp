@@ -1,0 +1,164 @@
+# Final Project Proposal
+> This is an final project proposal showing what a complete proposal looks like.
+
+**Date:** July 2026
+
+---
+## 1. Certificate Name
+
+**Ayan Adan Mohamed**
+
+---
+
+## 2. Project Title and Description
+**Project Title**
+
+Breast Cancer Detection Predection
+
+*Description*
+
+Breast cancer is one of the leading causes of cancer-related deaths among women worldwide. Early detection can significantly improve treatment outcomes and survival rates. This project aims to develop a machine learning model that classifies breast tumors as benign or malignant using clinical measurements from the Breast Cancer Wisconsin dataset. In addition to prediction, the project will use clustering techniques to explore hidden patterns among tumor characteristics. The results can support healthcare professionals by providing faster and more accurate diagnostic assistance.
+
+---
+
+## 3. Problem Type
+
+**Primary Problem Type:** *Classification*
+
+**Additional Analysis:** *Clustering (Unsupervised Learning)*
+
+The main objective is to classify breast tumors into benign or malignant categories using supervised machine learning. As part of the exploratory analysis, K-Means clustering will be applied to discover natural groupings among tumor samples and compare them with the known diagnosis labels.
+
+---
+
+## 4. Dataset
+
+*Dataset Source*
+
+Breast Cancer yasserh Diagnostic Dataset (Kaggle)
+
+https://www.kaggle.com/datasets/yasserh/breast-cancer-dataset
+
+*Dataset Size*
+
+Approximately 569 records in the original dataset.
+
+Note: Since the course proposal requires at least 1,000 rows and 32 columns, I will use an expanded version of the dataset and combined another 597 records available breast cancer datasets containing more than 1,000 samples for training and evaluation.
+
+*Target Column*
+
+**Diagnosis**
+
+M = Malignant
+B = Benign
+
+**Main Features**
+
+Radius Mean
+Texture Mean
+Perimeter Mean
+Area Mean
+Smoothness Mean
+Compactness Mean
+Concavity Mean
+Symmetry Mean
+Fractal Dimension Mean
+
+---
+
+## 5. Algorithms You Plan to Train
+
+
+**Supervised Learning And Unsupervised Learning**
+
+| # | Algorithm | Why it fits |
+| --- | --- | --- |
+
+
+|1|**Random Forest**
+
+|Random Forest handles complex relationships between tumor features and provides high classification accuracy.|
+
+|2| **Support Vector Machine (SVM)**
+
+| SVM performs well on medical datasets with high-dimensional features and is commonly used for breast cancer classification.|
+
+|3| **XGBoost**
+
+| XGBoost is an advanced boosting algorithm that often achieves excellent predictive performance on structured medical data.|
+
+|4| **K-Means Clustering**
+
+| K-Means will group tumors with similar characteristics to explore whether natural clusters correspond to benign and malignant diagnoses.|
+
+---
+
+## 6. Evaluation Plan
+
+**Classification Metrics**
+
+Accuracy
+Precision
+Recall
+F1-Score
+ROC-AUC
+Confusion Matrix
+
+**Clustering Metric**
+Silhouette Score
+
+**Best Model Selection**
+
+The F1-Score will be used to select the best classification model because it balances both precision and recall, which is important in medical diagnosis where false negatives and false positives have significant consequences.
+
+---
+
+## 7. Deployment Sketch
+
+**Framework**
+
+FastAPI
+
+**Endpoint**
+
+POST /predict
+
+**Input (JSON)**
+{
+  "radius_mean": 17.99,
+  "texture_mean": 10.38,
+  "perimeter_mean": 122.8,
+  "area_mean": 1001.0,
+  "smoothness_mean": 0.1184
+}
+Output
+{
+  "prediction": "Malignant",
+  "probability": 0.97,
+  "cluster": 1
+}
+
+The API will return both the predicted diagnosis and the patient's cluster assignment.
+
+---
+
+## 8. Repository Plan
+
+```
+Breast-Cancer-Detection/
+│
+├── dataset/
+├── notebooks/
+│   ├── eda.ipynb
+│   ├── clustering.ipynb
+│   └── modeling.ipynb
+├── src/
+│   ├── preprocess.py
+│   ├── train.py
+│   └── predict.py
+├── api/
+│   └── app.py
+├── models/
+├── reports/
+├── README.md
+└── project-proposal.md
