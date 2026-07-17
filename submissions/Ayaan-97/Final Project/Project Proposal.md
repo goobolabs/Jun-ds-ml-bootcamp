@@ -124,6 +124,9 @@ FastAPI
 POST /predict
 
 **Input (JSON)**
+
+```json
+
 {
   "radius_mean": 17.99,
   "texture_mean": 10.38,
@@ -131,12 +134,20 @@ POST /predict
   "area_mean": 1001.0,
   "smoothness_mean": 0.1184
 }
+
+```
+**Output JSON:**
+
+```json
+
 Output
 {
   "prediction": "Malignant",
   "probability": 0.97,
   "cluster": 1
 }
+
+```
 
 The API will return both the predicted diagnosis and the patient's cluster assignment.
 
