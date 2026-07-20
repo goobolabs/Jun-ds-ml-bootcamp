@@ -84,7 +84,8 @@ Program: Goobo Labs Machine Learning Bootcamp
 
 
 
-GitHub Repository Link
+Author
 
+Muhiadin Said Hassan
 
-https://github.com/MUHIYADIN2025/churn-segmentation-project
+Project Repository: https://github.com/MUHIYADIN2025/churn-segmentation-project
