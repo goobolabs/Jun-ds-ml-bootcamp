@@ -9,7 +9,7 @@ Access to clean and safe drinking water is critical for public health. This proj
 
 The system allows users to enter water quality measurements and receive an instant prediction indicating whether the water is potable or not.
 
----
+
 
 ## Objectives
 
@@ -19,7 +19,7 @@ The system allows users to enter water quality measurements and receive an insta
 - Deploy the model using FastAPI.
 - Build a React frontend for user interaction.
 
----
+
 
 ##  Dataset
 
@@ -120,7 +120,7 @@ Random Forest achieved the highest accuracy and overall performance and was sele
 
 **Overall Accuracy:** 69%
 
----
+
 
 ## ✅ Sanity Checks
 
@@ -144,7 +144,7 @@ The trained model was deployed using FastAPI.
 
 ```bash
 cd api
-uvicorn main:app --reload
+uvicorn app:app --reload
 ```
 
 ### API Endpoint
