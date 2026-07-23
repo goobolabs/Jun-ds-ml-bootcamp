@@ -1,5 +1,7 @@
 # Project Paper: Heart Disease Prediction API
 
+### 🚀 [View Live Demo](https://heart-disease-prediction-api-five.vercel.app/) | 🐙 [View Source Code or Repository](https://github.com/abdullahi4444/Heart-Disease-Prediction-API)
+
 ## 1. Problem Statement and Motivation
 Heart disease remains one of the leading causes of mortality worldwide. Early detection and intervention can significantly improve treatment outcomes and save lives. In modern clinical settings, hospitals and healthcare professionals collect vast amounts of patient data during routine examinations. However, identifying at-risk patients efficiently and accurately can be challenging without automated decision-support tools.
 

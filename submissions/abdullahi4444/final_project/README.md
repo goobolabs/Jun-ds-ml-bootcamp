@@ -1,5 +1,25 @@
 # Heart Disease Prediction API 🫀
 
+<div align="center">
+
+<img src="https://avatars.githubusercontent.com/u/173564581?v=4" width="120" height="120" style="border-radius:50%;border:3px solid #3b82f6;" alt="Abdullahi" />
+
+# ❤️ CardioAI — Heart Disease Prediction API
+
+**AI-powered cardiovascular risk assessment · Built by [Abdullahi](https://github.com/abdullahi4444)**
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=fff)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-009688?style=for-the-badge&logo=fastapi&logoColor=fff)](https://fastapi.tiangolo.com/)
+[![React](https://img.shields.io/badge/React-18+-61DAFB?style=for-the-badge&logo=react&logoColor=000)](https://react.dev/)
+[![Scikit-learn](https://img.shields.io/badge/Scikit--learn-ML-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=fff)](https://scikit-learn.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
+
+### 🚀 [View Live Demo](https://heart-disease-prediction-api-five.vercel.app/) | 🐙 [View Source Code or Repository](https://github.com/abdullahi4444/Heart-Disease-Prediction-API)
+
+</div>
+
+<br/>
+
 This repository contains my final project for the ML Model Development and Deployment bootcamp. The goal of this project is to build a complete machine learning pipeline—from data preprocessing to training multiple models—and finally deploy the best-performing model as a REST API using FastAPI.
 
 This API predicts whether a patient is at risk of heart disease based on their clinical information (like age, blood pressure, cholesterol, etc.).
@@ -79,6 +99,40 @@ curl -X POST http://127.0.0.1:8000/predict \
   "probability": 0.91
 }
 ```
+
+I would like to express my deepest gratitude to the incredible individuals and organizations that made this learning journey possible. Your guidance, support, and sponsorship were invaluable to my success in this bootcamp.
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center">
+        <a href="https://github.com/omartood">
+          <img src="https://github.com/omartood.png" width="100px;" style="border-radius:50%;" alt="Omar Tood"/><br />
+          <b>Omar Tood</b>
+        </a><br />
+        <i>Mentor & Instructor</i>
+      </td>
+      <td align="center">
+        <a href="https://github.com/sharafdin">
+          <img src="https://github.com/sharafdin.png" width="100px;" style="border-radius:50%;" alt="Sharafdin"/><br />
+          <b>Sharafdin</b>
+        </a><br />
+        <i>Instructor</i>
+      </td>
+      <td align="center">
+        <a href="https://github.com/goobolabs">
+          <img src="https://github.com/goobolabs.png" width="100px;" style="border-radius:50%;" alt="Goobolabs"/><br />
+          <b>Goobolabs</b>
+        </a><br />
+        <i>Official Sponsor</i>
+      </td>
+    </tr>
+  </table>
+</div>
+
+## 👤 Author
+<div align="center">
+<img src="https://avatars.githubusercontent.com/u/173564581?v=4" width="80" height="80" style="border-radius:50%;" alt="Abdullahi"/>
 
 ---
 *Developed by Abdullahi Abdiweli Adam (July 2026).*
