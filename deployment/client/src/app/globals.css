@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #fafaf9;
+  --surface: #ffffff;
+  --surface2: #f3f4f2;
+  --ink: #0c0c0b;
+  --muted: rgba(12, 12, 11, 0.55);
+  --muted-strong: rgba(12, 12, 11, 0.7);
+  --muted-faint: rgba(12, 12, 11, 0.35);
+  --muted-label: rgba(12, 12, 11, 0.45);
+  --border: rgba(12, 12, 11, 0.08);
+  --border-strong: rgba(12, 12, 11, 0.1);
+  --shadow: rgba(12, 12, 11, 0.35);
+  --error: #b91c1c;
+  --result-reject: #0c0c0b;
+  --mint: #3acc69;
+  --mint-600: #2fb95a;
+  --mint-700: #1f9a48;
+  --glow: rgba(58, 204, 105, 0.18);
+  --glow-soft: rgba(58, 204, 105, 0.08);
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface2: #1c1c1b;
+  --ink: #f5f5f4;
+  --muted: rgba(245, 245, 244, 0.55);
+  --muted-strong: rgba(245, 245, 244, 0.7);
+  --muted-faint: rgba(245, 245, 244, 0.35);
+  --muted-label: rgba(245, 245, 244, 0.45);
+  --border: rgba(245, 245, 244, 0.1);
+  --border-strong: rgba(245, 245, 244, 0.14);
+  --shadow: rgba(0, 0, 0, 0.55);
+  --error: #f87171;
+  --result-reject: #f5f5f4;
+  --mint: #3acc69;
+  --mint-600: #4ad678;
+  --mint-700: #3acc69;
+  --glow: rgba(58, 204, 105, 0.22);
+  --glow-soft: rgba(58, 204, 105, 0.1);
+}
+
+@theme inline {
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --color-mint: var(--mint);
+  --color-mint-600: var(--mint-600);
+  --color-mint-700: var(--mint-700);
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1,
+h2,
+.brand {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+@keyframes result-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes meter-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.result-enter {
+  animation: result-in 0.45s ease-out both;
+}
+
+.meter-fill {
+  transform-origin: left center;
+  animation: meter-fill 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.pulse-soft {
+  animation: pulse-soft 1.6s ease-in-out infinite;
+}
