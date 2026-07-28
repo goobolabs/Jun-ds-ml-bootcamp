@@ -1,6 +1,11 @@
 # Bank Loan Approval & Creditworthiness Predictor 🏦📊
 
-An automated End-to-End Machine Learning workflow designed to assess the creditworthiness of loan applicants. This system predicts whether a loan application should be **Approved** or **Rejected** based on financial and asset attributes, helping financial institutions mitigate risks and speed up processing times.
+## 🔗 Repository Link
+https://github.com/Spalpha/bank-loan-predictor.git
+
+
+---
+An automated End-to-End Machine Learning workflow designed to assess the creditworthiness of loan applicant. This system predicts whether a loan application should be **Approved** or **Rejected** based on financial and asset attributes, helping financial institutions mitigate risks and speed up processing times.
 
 ---
 

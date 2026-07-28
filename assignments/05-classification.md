@@ -1,6 +1,4 @@
-# Assignment Five: Classification — Theory and Practice
-
-**Due:** Sunday, July 5, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
+# Assignment 5 – Classification — Theory and Practice
 
 **Goal:** Demonstrate understanding of classification concepts in Machine Learning. Reproduce the **Lesson 5** preprocessing and modeling pipeline in Jupyter notebooks, then research and implement **one additional classifier** — for a total of three models (Logistic Regression, Random Forest, and your chosen algorithm) on the loan approval dataset.
 
@@ -235,6 +233,6 @@ Submit these four files:
 - `loan_approval_prediction.ipynb` — Part B2 notebook with all code and output cells visible.
 - `reflection_paper.md` or `reflection_paper.pdf` — Part C reflection.
 
-Also produce `clean_loan_dataset.csv` (used by Part B2; same pattern as Assignment Three's cleaned CSV).
+Also produce `clean_loan_dataset.csv` (used by Part B2; same pattern as Assignment 3's cleaned CSV).
 
 ---

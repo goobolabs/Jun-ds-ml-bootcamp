@@ -1,6 +1,4 @@
-# Assignment Six: Clustering — Theory and Practice
-
-**Due:** Thursday, July 9, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
+# Assignment 6 – Clustering — Theory and Practice
 
 **Goal:** Demonstrate understanding of clustering concepts in Machine Learning. Reproduce the **Lesson 6** wholesale segmentation script in a Jupyter notebook, then research and implement **one additional clustering algorithm** — for a total of two methods (K-Means from class, plus your chosen algorithm) on the wholesale customers dataset.
 

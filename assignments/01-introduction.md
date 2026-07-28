@@ -1,6 +1,4 @@
-# Research Assignment: Introduction to Data Science and Machine Learning
-
-**Due:** Monday, June 15, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
+# Assignment 1 – Introduction to Data Science and Machine Learning
 
 **Goal:** Understand the foundational concepts of Data Science and Machine Learning, including the DS lifecycle, learning types, overfitting, and model evaluation.
 

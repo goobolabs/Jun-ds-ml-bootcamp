@@ -1,6 +1,4 @@
-# Practical Assignment: Data Preprocessing Pipeline
-
-**Due:** Wednesday, June 24, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
+# Assignment 3 – Data Preprocessing Pipeline
 
 **Goal:** Build a clean, reproducible preprocessing pipeline on a messy tabular dataset, applying the cleaning, encoding, scaling, and feature engineering techniques from Lesson 3.
 

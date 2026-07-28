@@ -1,8 +1,6 @@
-# Assignment Four: Regression — Theory and Practice
+# Assignment 4 – Regression — Theory and Practice
 
-**Due:** Tuesday, June 30, 2026 — 12:00 PM (Africa/Mogadishu / EAT)
-
-**Goal:** Demonstrate understanding of regression concepts in Machine Learning and apply them by building and comparing Linear Regression and Random Forest models for car price prediction using the dataset you cleaned in Assignment Three.
+**Goal:** Demonstrate understanding of regression concepts in Machine Learning and apply them by building and comparing Linear Regression and Random Forest models for car price prediction using the dataset you cleaned in Assignment 3.
 
 ---
 
@@ -48,7 +46,7 @@ Write your answers in English using a clear academic style (headings, paragraphs
 
 ## Part B — Practical: Car Price Prediction
 
-**Dataset:** Use the cleaned car dataset you produced in Assignment Three (`clean_car_dataset.csv`).
+**Dataset:** Use the cleaned car dataset you produced in Assignment 3 (`clean_car_dataset.csv`).
 
 Create a Jupyter Notebook named `car_price_prediction.ipynb` and implement the following steps:
 
@@ -101,7 +99,7 @@ Write a short paper (1–2 pages, Markdown or PDF) answering the following:
 
 1. **What did you implement?**
 
-   - Briefly describe how you trained Linear Regression and Random Forest to predict car prices using your Assignment Three cleaned dataset.
+   - Briefly describe how you trained Linear Regression and Random Forest to predict car prices using your Assignment 3 cleaned dataset.
 
 2. **Comparison of Models**
 
