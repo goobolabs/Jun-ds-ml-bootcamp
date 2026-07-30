@@ -1,6 +1,5 @@
 # ✈️ Flight Delay Prediction System
-## Githup link of project
-https://github.com/fatima-moha143/fligh_delay_predict.git
+
 ## 📌 Machine Learning Classification Project
 
 A Machine Learning based web application that predicts whether a flight will be **On-Time** or **Delayed**.
