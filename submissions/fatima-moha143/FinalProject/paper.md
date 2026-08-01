@@ -2,7 +2,7 @@
 # GitHub Repository:
 https://github.com/fatima-moha143/fligh_delay_predict.git
 
-<<<<<<< HEAD
+
 ## Student Information
 
 **Student Name:** Fadumo mohamed omar 
