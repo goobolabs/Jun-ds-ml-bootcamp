@@ -1,368 +1,208 @@
-# Laptop Price Prediction Using Machine Learning
+# Student Name: Miski Mohamed Nur  
 
-## Final Project Report
+# Laptop Price Prediction Using Machine Learning Regression Algorithms and Flask Deployment
 
-**Student Name: Miski Mohamed Nur  
+## Abstract
 
----
+The increasing demand for laptops has created a challenge for customers when selecting devices with suitable specifications and reasonable prices. Laptop prices depend on various factors such as brand, processor, RAM, storage, graphics card, display, and operating system. This project presents a machine learning-based laptop price prediction system that estimates laptop prices using regression algorithms.
 
-# Abstract
+In this research, three machine learning regression models were implemented: Linear Regression, Random Forest Regression, and XGBoost Regression. The dataset was processed through data cleaning, feature transformation, and encoding of categorical attributes. The trained models were evaluated using regression performance metrics such as Mean Absolute Error (MAE), Root Mean Squared Error (RMSE), and R² Score.
 
-Laptop prices are affected by many hardware specifications such as processor type, RAM capacity, storage capacity, graphics card, screen size, weight, and brand. Because the laptop market contains thousands of models with different configurations, predicting the correct price manually can be challenging.
+The best-performing model was integrated into a Flask web application to provide real-time laptop price predictions. Users can enter laptop specifications through a web interface and receive an estimated price instantly. The developed system demonstrates how machine learning can be applied to improve price estimation and support purchasing decisions in the electronics market.
 
-This project develops a machine learning regression system that predicts laptop prices based on hardware specifications. Four regression algorithms were implemented and compared: Linear Regression, Random Forest Regressor, CatBoost Regressor, and XGBoost Regressor.
-
-The models were evaluated using R² Score, Mean Absolute Error (MAE), and Root Mean Squared Error (RMSE). The experimental results showed that XGBoost Regressor achieved the best performance with an R² Score of 0.834, MAE of 96.84, and RMSE of 165.48.
-
-The selected model was deployed using Flask framework to create a web-based prediction system. The application allows users to enter laptop specifications and receive estimated prices instantly through a user-friendly interface and REST API.
+**Keywords:** Machine Learning, Laptop Price Prediction, Regression Algorithms, Random Forest, XGBoost, Flask Deployment.
 
 ---
 
 # 1. Introduction
 
-## 1.1 Background
+The laptop market contains a wide range of products with different specifications and prices. The price of a laptop is influenced by many technical features, making it difficult for customers to determine the actual value of a device. Traditional methods require manual comparison of specifications, which can be time-consuming and sometimes inaccurate.
 
-The laptop industry provides a wide range of devices with different specifications, brands, and price categories. Laptop prices depend on several important factors including processor performance, RAM size, storage technology, graphics capability, display size, and manufacturer.
+Machine learning provides an efficient solution by analyzing historical data and identifying relationships between laptop specifications and prices. Regression algorithms are particularly suitable for predicting continuous values such as product prices.
 
-For customers, choosing a laptop with a reasonable price can be difficult because comparing different specifications requires technical knowledge and time.
-
-Machine learning provides an effective approach by learning patterns from historical laptop data and using these patterns to predict future prices.
+This project develops a laptop price prediction system using multiple regression algorithms and deploys the final model as a Flask-based web application. The system provides users with an automated method for estimating laptop prices based on their selected specifications.
 
 ---
 
-## 1.2 Problem Statement
-
-Determining the correct price of a laptop based only on specifications is a complex problem because multiple hardware features affect the final market price.
-
-This project aims to develop a machine learning model capable of automatically predicting laptop prices using hardware specifications as input.
-
----
-
-## 1.3 Project Objectives
+# 2. Objectives
 
 The main objectives of this project are:
 
-- Collect and prepare laptop price data.
-- Perform data cleaning and preprocessing.
-- Apply feature engineering techniques.
-- Train different machine learning regression models.
-- Compare model performance.
-- Select the best-performing model.
-- Deploy the final model using Flask.
-- Create a user-friendly prediction application.
+* To collect and analyze laptop specification data.
+* To preprocess and prepare data for machine learning.
+* To train regression models for laptop price prediction.
+* To compare different regression algorithms.
+* To evaluate model accuracy and performance.
+* To deploy the prediction model using Flask.
+* To create an interactive interface for users.
 
 ---
 
-# 2. Dataset Description
+# 3. Dataset Description
 
-## 2.1 Dataset Source
+The dataset used in this project contains information about different laptop models and their specifications. The main features include:
 
-The dataset used in this project is the Laptop Price Prediction Dataset obtained from Kaggle.
+| Feature          | Description               |
+| ---------------- | ------------------------- |
+| Brand            | Laptop manufacturer       |
+| Processor        | CPU information           |
+| RAM              | Memory capacity           |
+| Storage          | SSD/HDD capacity          |
+| GPU              | Graphics processing unit  |
 
-Dataset Source:
 
- https://www.kaggle.com/datasets/eslamelsolya/laptop-price-prediction
+| Price            | Target prediction value   |
 
-
-## 2.2 Dataset Information
-
-The dataset contains:
-
-- Approximately 1,300 laptop records.
-- 8 input features.
-- 1 target variable.
+The target variable of the system is the laptop price.
 
 ---
 
-## 2.3 Features Description
+# 4. Methodology
 
-| Feature | Description |
-|---|---|
-| Company | Laptop manufacturer |
-| TypeName | Laptop category |
-| Screen Size | Display size in inches |
-| CPU | Processor specification |
-| RAM | Installed memory |
-| Memory | Storage configuration |
-| GPU | Graphics card |
-| Weight | Laptop weight |
+The project follows a complete machine learning workflow:
 
----
+1. Data collection
+2. Data preprocessing
+3. Feature engineering
+4. Model training
+5. Model evaluation
+6. Model deployment
 
-## 2.4 Target Variable
-
-The target variable is:
-
-**Price**
-
-Since the price value is numerical and continuous, this project is considered a supervised regression problem.
+The raw dataset is cleaned by removing unnecessary values, handling missing data, and converting categorical features into numerical formats suitable for machine learning algorithms.
 
 ---
 
-# 3. Data Preprocessing
+# 5. Machine Learning Models
 
-Before training the machine learning models, several preprocessing steps were performed.
+## 5.1 Linear Regression
 
-## 3.1 Data Cleaning
+Linear Regression is a basic supervised learning algorithm that predicts the relationship between input features and laptop price. It provides a simple and interpretable approach for price prediction.
 
-The following operations were applied:
+## 5.2 Random Forest Regression
 
-- Removed unnecessary columns.
-- Checked missing values.
-- Removed duplicate records.
-- Converted data into suitable formats.
+Random Forest Regression is an ensemble learning method that combines multiple decision trees to improve prediction accuracy. It can handle complex relationships between laptop features and prices.
 
----
+## 5.3 XGBoost Regression
 
-## 3.2 Feature Engineering
-
-Machine learning algorithms require numerical data, therefore categorical variables were transformed.
-
-Categorical features:
-
-- Company
-- TypeName
-- CPU
-- Memory
-- GPU
-
-Numerical features:
-
-- Screen Size
-- Weight
+XGBoost is a powerful gradient boosting algorithm that improves prediction performance by combining multiple weak learners. It is widely used for structured data prediction problems because of its accuracy and efficiency.
 
 ---
 
-## 3.3 Train-Test Split
+# 6. System Implementation
 
-The dataset was divided into two parts:
+The project was implemented using Python and Flask.
 
-| Dataset | Percentage |
-|---|---:|
-| Training Data | 80% |
-| Testing Data | 20% |
+The system structure includes:
 
-The same split was used for all models to ensure a fair comparison.
+```
+FINAL-PROJ-DS-ML/
 
----
+Dataset/
 
-# 4. Machine Learning Algorithms
+frontend/
+    templates/
+        index.html
 
-Four regression algorithms were implemented.
+    static/
+        style.css
+        js/script.js
 
----
+models/
+    linear_regression_model.pkl
+    random_forest_model.pkl
+    xgboost_model.pkl
 
+app.py
+train.py
+predict.py
+processing.py
+requirements.txt
+```
 
-## 4.1 Random Forest Regressor
-
-Random Forest is an ensemble learning algorithm that combines multiple decision trees to improve prediction accuracy.
-
-### Advantages:
-
-- Handles nonlinear relationships.
-- Reduces overfitting.
-- Provides reliable predictions.
-
----
-
-## 4.2 CatBoost Regressor
-
-CatBoost is a gradient boosting algorithm designed to handle categorical features effectively.
-
-### Advantages:
-
-- Works well with categorical data.
-- Provides high prediction accuracy.
-- Requires less preprocessing.
+The trained models are saved as `.pkl` files and loaded by the Flask application during prediction.
 
 ---
 
-## 4.3 XGBoost Regressor
+# 7. Flask Web Application
 
-XGBoost is an advanced gradient boosting algorithm widely used for machine learning regression tasks.
+The Flask application provides a simple interface where users enter laptop specifications. The entered information is processed and passed to the trained machine learning model.
 
-### Advantages:
+The prediction process follows:
 
-- High predictive performance.
-- Handles complex patterns.
-- Includes regularization techniques.
-- Efficient training.
-
----
-
-# 5. Model Evaluation
-
-The models were evaluated using three evaluation metrics.
-
----
-
-## 5.1 R² Score
-
-R² Score measures how well the model explains the variation in laptop prices.
-
-Higher values indicate better performance.
+```
+User Input
+     |
+     ↓
+Flask Application
+     |
+     ↓
+Data Processing
+     |
+     ↓
+Machine Learning Model
+     |
+     ↓
+Predicted Laptop Price
+```
 
 ---
 
-## 5.2 Mean Absolute Error (MAE)
+# 8. Model Evaluation
 
-MAE measures the average difference between predicted and actual prices.
+The performance of the regression models is evaluated using:
 
-Lower values indicate better accuracy.
+### Mean Absolute Error (MAE)
 
----
+Measures the average difference between actual and predicted prices.
 
-## 5.3 Root Mean Squared Error (RMSE)
+### Root Mean Squared Error (RMSE)
 
-RMSE measures the size of prediction errors.
+Measures the prediction error while giving more importance to large errors.
 
-Lower values indicate better model performance.
+### R² Score
 
----
+Measures how well the model explains variations in laptop prices.
 
-# 6. Model Comparison Results
-
-| Model | R² Score | MAE | RMSE |
-|---|---:|---:|---:|
-| Random Forest Regressor | 0.828 | 98.46 | 168.16 |
-| CatBoost Regressor | 0.832 | 102.34 | 166.24 |
-| XGBoost Regressor | **0.834** | **96.84** | **165.48** |
+Based on experiments, ensemble models such as Random Forest and XGBoost generally achieve better performance because they can capture complex relationships between laptop specifications.
 
 ---
 
-# 7. Best Model Selection
+# 9. Results and Discussion
 
-Based on the evaluation results, XGBoost Regressor achieved the best performance.
+The developed system successfully predicts laptop prices using machine learning regression techniques. Linear Regression provides a basic prediction capability, while Random Forest and XGBoost provide improved accuracy due to their ability to learn complex patterns.
 
-Performance:
-
-- R² Score: 0.834
-- MAE: 96.84
-- RMSE: 165.48
-
-
-XGBoost was selected as the final model because it provided:
-
-- Highest prediction accuracy.
-- Lowest prediction error.
-- Better ability to learn complex relationships between laptop specifications and prices.
+The deployment of the model through Flask makes the system practical and accessible. Users can interact with the prediction system without requiring technical knowledge about machine learning.
 
 ---
 
-# 8. Model Testing
+# 10. Conclusion
 
-Additional tests were performed to verify that the model produces realistic predictions.
+This research developed an automated laptop price prediction system using machine learning regression algorithms. The project demonstrated the complete machine learning lifecycle, including data preprocessing, model training, evaluation, and deployment.
 
----
-
-## Test Case 1
-
-Laptop Configuration:
-
-- Company: Apple
-- Type: Ultrabook
-- Screen Size: 13.3 inches
-- CPU: Intel Core i5
-- RAM: 8GB
-- Memory: 256GB SSD
-- GPU: Intel Iris Graphics
-- Weight: 1.37kg
-
-
-Result:
-
-The model generated a reasonable price prediction compared with similar laptops.
+The results show that machine learning techniques can effectively estimate laptop prices based on hardware specifications. The Flask web application provides an easy-to-use platform for real-time price prediction.
 
 ---
 
-## Test Case 2
+# 11. Future Improvements
 
-Laptop Configuration:
+Future development of this project can include:
 
-- Company: Dell
-- Type: Notebook
-- Screen Size: 15.6 inches
-- CPU: Intel Core i7
-- RAM: 16GB
-- Memory: 512GB SSD
-- GPU: NVIDIA GTX 1650
-- Weight: 2.10kg
-
-
-Result:
-
-The prediction was consistent with laptops having similar specifications.
+* Real-time laptop price collection from online stores.
+* Integration with e-commerce platforms.
+* Development of a mobile application.
+* Use of deep learning algorithms.
+* Automatic model updating with new market data.
 
 ---
 
-## Test Case 3
+# References
 
-Laptop Configuration:
+1. Breiman, L. (2001). Random Forests. Machine Learning Journal.
 
-- Company: ASUS
-- Type: Gaming
-- Screen Size: 17.3 inches
-- CPU: AMD Ryzen 7
-- RAM: 16GB
-- Memory: 1TB HDD + 256GB SSD
-- GPU: AMD Radeon RX 580
-- Weight: 3.20kg
+2. Chen, T., & Guestrin, C. (2016). XGBoost: A Scalable Tree Boosting System.
 
+3. Pedregosa, F. et al. (2011). Scikit-learn: Machine Learning in Python.
 
-Result:
+4. Hastie, T., Tibshirani, R., & Friedman, J. (2009). The Elements of Statistical Learning.
 
-The model predicted a higher price because of the powerful gaming hardware.
-
----
-
-# 9. Deployment Using Flask
-
-The final XGBoost model was deployed using Flask framework.
-
-The application consists of:
-
-- Frontend web interface.
-- Flask backend.
-- Trained machine learning model.
-- Prediction API.
-
-Users can enter laptop specifications through the web interface and receive an estimated price instantly.
-
----
-
-# 9.1 REST API
-
-The system provides a REST API endpoint:
-
-The API receives laptop specifications as input and returns the predicted laptop price.
-
-Example Input:
-
-```json
-{
-"Company":"Dell",
-"TypeName":"Notebook",
-"ScreenSize":15.6,
-"CPU":"Intel Core i7",
-"RAM":"16GB",
-"Memory":"512GB SSD",
-"GPU":"NVIDIA GTX 1650",
-"Weight":"2.10kg"
-}
-{
-"Predicted Price":881
-}
-10. Conclusion
-
-This project successfully developed a machine learning system for predicting laptop prices based on hardware specifications.
-
-Four regression algorithms were trained and evaluated. The results showed that XGBoost Regressor achieved the best performance compared with other models.
-
-The final model was deployed using Flask, providing a simple web application and REST API that allow users to estimate laptop prices easily.
-
-This project demonstrates that machine learning can be effectively used for price prediction and decision support systems.
-
-# 10 Reference
-github linkg https://github.com/Engmiski/Laptop-Price-Prediction-ML
-
-local link http://127.0.0.1:5000
+ githublink   https://github.com/Engmiski/laptop-price-prediction-model
