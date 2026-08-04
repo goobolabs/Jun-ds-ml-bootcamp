@@ -1,4 +1,4 @@
-# ✈️Flight Delay Prediction System Using Machine Learning
+# Flight Delay Prediction System Using Machine Learning
 
 ## Abstract
 
