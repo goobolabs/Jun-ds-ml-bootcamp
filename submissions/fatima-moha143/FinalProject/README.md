@@ -1,4 +1,4 @@
-# ✈️ Flight Delay Prediction System
+#  Flight Delay Prediction System
 
 ## 📌 Machine Learning Classification Project
 
